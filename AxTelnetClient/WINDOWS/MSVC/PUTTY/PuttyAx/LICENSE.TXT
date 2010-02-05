@@ -1,0 +1,17 @@
+
+PuTTY Telnet Client 0.58 ActiveX Control
+----------------------------------------
+
+ActiveX version written by Vito Plantamura, 2006 (http://www.vitoplantamura.com/).
+
+WEBSITE
+-------
+
+PuTTY Telnet Client ActiveX Control on the web: http://www.vitoplantamura.com/index.aspx?page=axtelnetclient
+
+To see this ActiveX control at work, try GoToTerminal: https://www.gototerminal.com/
+
+LICENSE
+-------
+
+Putty ActiveX client is licensed under the terms of the GNU General Public License (GPL).

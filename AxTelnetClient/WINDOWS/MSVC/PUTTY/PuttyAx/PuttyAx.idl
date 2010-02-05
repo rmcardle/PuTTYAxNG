@@ -1,0 +1,61 @@
+// PuttyAx.idl : IDL source for PuttyAx.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PuttyAx.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "olectl.h"
+	
+
+	[
+		object,
+		uuid(716B2BB3-55B5-4CB8-9E2A-275B29B982A8),
+		dual,
+		helpstring("IPuttyAxObj Interface"),
+		pointer_default(unique)
+	]
+	interface IPuttyAxObj : IDispatch
+	{
+		[id(1), helpstring("method Connect")] HRESULT Connect();
+		[id(2), helpstring("method Disconnect")] HRESULT Disconnect();
+		[propget, id(3), helpstring("property Connected")] HRESULT Connected([out, retval] BOOL *pVal);
+		[propget, id(4), helpstring("property Server")] HRESULT Server([out, retval] BSTR *pVal);
+		[propput, id(4), helpstring("property Server")] HRESULT Server([in] BSTR newVal);
+		[id(5), helpstring("method ExecuteCommand")] HRESULT ExecuteCommand([in] BSTR cmdText, [out, retval] BSTR *pRetVal);
+		[propget, id(6), helpstring("property IsInitialized")] HRESULT IsInitialized([out, retval] BOOL *pVal);
+	};
+
+[
+	uuid(B2211620-5305-4544-85DC-A279D28DEA12),
+	version(1.0),
+	helpstring("PuttyAx 1.0 Type Library")
+]
+library PUTTYAXLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(E317EEDE-B3A3-458E-BD1C-1DFB979A8773),
+		helpstring("_IPuttyAxObjEvents Interface")
+	]
+	dispinterface _IPuttyAxObjEvents
+	{
+		properties:
+		methods:
+		[id(1), helpstring("method OnConnected")] HRESULT OnConnected();
+		[id(2), helpstring("method OnDisconnected")] HRESULT OnDisconnected(BSTR reason);
+	};
+
+	[
+		uuid(5CC7C29A-80DB-44B9-9A90-48EEA39B4717),
+		helpstring("PuttyAxObj Class")
+	]
+	coclass PuttyAxObj
+	{
+		[default] interface IPuttyAxObj;
+		[default, source] dispinterface _IPuttyAxObjEvents;
+	};
+};

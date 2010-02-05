@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>ATL 3.0 test page for object PuttyAxObj</title>
+
+    <script language="JavaScript">
+
+function OnControlLoad ()
+{
+	var ctrl = document.getElementById( "PuttyAxObj" );
+
+	if ( ctrl != null && ctrl.readyState == 4 )
+	{
+		ctrl.attachEvent( "OnConnected", new Function ( "alert('connected');" ) );
+		ctrl.attachEvent( "OnDisconnected", new Function ( "reason", "alert('disconnected (' + reason + ')');" ) );
+	}
+}
+
+function connect ()
+{
+    var ctrl = document.getElementById( "PuttyAxObj" );
+
+	ctrl.object.Server = "127.0.0.1";
+	alert( "going to connect to " + ctrl.object.Server + "..." );
+	try
+	{
+		ctrl.object.Connect ();
+	}
+	catch( e )
+	{
+		alert( "connect exception: " + e.message );
+	}
+}
+
+function OnHideButton ()
+{
+	var ctrl = document.getElementById( "PuttyAxObj" );
+
+    if ( ctrl != null )
+    {
+        if ( ctrl.style.display != "none" )
+        {
+            ctrl.style.display = "none";
+            document.all.btnHide.value = " Show ";
+        }
+        else
+        {
+            ctrl.style.display = "inline";
+            document.all.btnHide.value = " Hide ";
+        }
+    }
+}
+
+function ShowDiscButton (vis)
+{
+    var btn1 = window.document.getElementById( "btnDisconnect" );
+    var btn2 = window.document.getElementById( "btnFileTransfer" );
+    var btn3 = window.document.getElementById( "btnAbout" );
+    
+    var visStr = ( (vis==false) ? "none" : "block" );
+    
+    btn1.style.display = visStr;
+    btn2.style.display = visStr;
+    btn3.style.display = visStr;
+}
+
+function OnDisconnectButton ()
+{
+	var ctrl = document.getElementById( "PuttyAxObj" );
+    if ( ctrl != null )
+        ctrl.Disconnect ();
+}
+
+function OnCommandBtn ( cmdText )
+{
+	var ctrl = document.getElementById( "PuttyAxObj" );
+    if ( ctrl != null )
+        ctrl.ExecuteCommand( cmdText )
+}
+
+    </script>
+
+</head>
+<body>
+    <table cellspacing='2px' cellpadding='0' border='0'>
+        <tr>
+            <td>
+                <input type='button' style='font-weight: normal; font-family: tahoma; font-size: 11px;
+                    height: 20px' value=' Connect ' onclick='connect();' id='btnConnect' />
+            </td>
+            <td>
+                <input type='button' style='font-weight: normal; font-family: tahoma; font-size: 11px;
+                    height: 20px' value=' Disconnect ' onclick='OnDisconnectButton();' id='btnDisconnect2' />
+            </td>
+            <td>
+                <input type='button' style='font-weight: normal; font-family: tahoma; font-size: 11px;
+                    height: 20px' value=' Hide ' onclick='OnHideButton();' id='btnHide' />
+            </td>
+            <td>
+                <input type='button' style='font-weight: normal; font-family: tahoma; font-size: 11px;
+                    height: 20px; ' value=' Disconnect ' onclick='OnDisconnectButton();'
+                    id='btnDisconnect' />
+            </td>
+            <td>
+                <input type='button' style='font-weight: normal; font-family: tahoma; font-size: 11px;
+                    height: 20px; ' value=' Copy ' onclick='OnCommandBtn("copyalltoclipboard");'
+                    id='btnFileTransfer' />
+            </td>
+            <td>
+                <input type='button' style='font-weight: normal; font-family: tahoma; font-size: 11px;
+                    height: 20px; ' value=' Paste ' onclick='OnCommandBtn("Paste");'
+                    id='Button1' />
+            </td>
+            <td>
+                <input type='button' style='font-weight: normal; font-family: tahoma; font-size: 11px;
+                    height: 20px; ' value=' About ' onclick='OnCommandBtn("About");'
+                    id='btnAbout' />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <object language="JavaScript" id="PuttyAxObj" onreadystatechange="OnControlLoad();"
+        width="800" height="600" classid="CLSID:5CC7C29A-80DB-44B9-9A90-48EEA39B4717">
+    </object>
+</body>
+</html>

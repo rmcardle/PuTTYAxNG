@@ -1,4 +1,6 @@
 /AxTelnetClient/WINDOWS/MSVC/PUTTY/PuttyAx/Debug
+/TestApp/bin
+/TestApp/obj
 *.suo
 *.ncb
 *.user

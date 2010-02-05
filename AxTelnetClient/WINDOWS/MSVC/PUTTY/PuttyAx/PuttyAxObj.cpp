@@ -587,6 +587,8 @@ LRESULT CALLBACK CPuttyAxObj::fnHookKeyboard( int code, WPARAM wParam, LPARAM lP
 
 BOOL CPuttyAxObj::CanEnter ()
 {
+	return TRUE;
+
 	// check out the URL of the calling page...
 
 	HRESULT				hr;

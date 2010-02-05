@@ -79,7 +79,7 @@ public:
 		{
 			CCriticalSection::scope			__access__( m_csGetPointerAccess );
 
-			for( int i=0; i<m_vsMemRegionInfo.size (); i ++ )
+			for( unsigned int i=0; i<m_vsMemRegionInfo.size (); i ++ )
 				::free( m_vsMemRegionInfo[ i ].pvMem );
 
 			m_vsMemRegionInfo.clear ();
@@ -156,7 +156,7 @@ END_MSG_MAP()
 		};
 		for (int i=0; i<sizeof(arr)/sizeof(arr[0]); i++)
 		{
-			if (::ATL::InlineIsEqualGUID(*arr[i], riid))
+			if (::InlineIsEqualGUID(*arr[i], riid))
 				return S_OK;
 		}
 		return S_FALSE;

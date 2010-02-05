@@ -5,11 +5,11 @@
 #include <ctype.h>
 #include <time.h>
 
-#include "putty.h"
-#include "ssh.h"
+#include "..\putty.h"
+#include "..\ssh.h"
 #include "win_res.h"
-#include "storage.h"
-#include "dialog.h"
+#include "..\storage.h"
+#include "..\dialog.h"
 
 #include <commctrl.h>
 #include <commdlg.h>
@@ -811,42 +811,43 @@ int verify_ssh_host_key(void *frontend, char *host, int port, char *keytype,
     ret = verify_host_key(host, port, keytype, keystr);
 
     if (ret == 0)		       /* success - key matched OK */
-	return 1;
+		return 1;
     if (ret == 2) {		       /* key was different */
-	int mbret;
-	char *text = dupprintf(wrongmsg, appname, keytype, fingerprint,
-			       appname);
-	char *caption = dupprintf(mbtitle, appname);
-	mbret = message_box(text, caption,
-			    MB_ICONWARNING | MB_YESNOCANCEL | MB_DEFBUTTON3,
-			    HELPCTXID(errors_hostkey_changed));
-	assert(mbret==IDYES || mbret==IDNO || mbret==IDCANCEL);
-	sfree(text);
-	sfree(caption);
-	if (mbret == IDYES) {
-	    store_host_key(host, port, keytype, keystr);
-	    return 1;
-	} else if (mbret == IDNO)
-	    return 1;
+		int mbret;
+		char *text = dupprintf(wrongmsg, appname, keytype, fingerprint,
+					   appname);
+		char *caption = dupprintf(mbtitle, appname);
+		mbret = message_box(text, caption,
+					MB_ICONWARNING | MB_YESNOCANCEL | MB_DEFBUTTON3,
+					HELPCTXID(errors_hostkey_changed));
+		assert(mbret==IDYES || mbret==IDNO || mbret==IDCANCEL);
+		sfree(text);
+		sfree(caption);
+		if (mbret == IDYES) {
+			store_host_key(host, port, keytype, keystr);
+			return 1;
+		} else if (mbret == IDNO)
+			return 1;
         return 0;
     }
     if (ret == 1) {		       /* key was absent */
-	int mbret;
-	char *text = dupprintf(absentmsg, keytype, fingerprint, appname);
-	char *caption = dupprintf(mbtitle, appname);
-	mbret = message_box(text, caption,
-			    MB_ICONWARNING | MB_YESNOCANCEL | MB_DEFBUTTON3,
-			    HELPCTXID(errors_hostkey_absent));
-	assert(mbret==IDYES || mbret==IDNO || mbret==IDCANCEL);
-	sfree(text);
-	sfree(caption);
-	if (mbret == IDYES) {
-	    store_host_key(host, port, keytype, keystr);
-	    return 1;
-	} else if (mbret == IDNO)
-	    return 1;
+		int mbret;
+		char *text = dupprintf(absentmsg, keytype, fingerprint, appname);
+		char *caption = dupprintf(mbtitle, appname);
+		mbret = message_box(text, caption,
+					MB_ICONWARNING | MB_YESNOCANCEL | MB_DEFBUTTON3,
+					HELPCTXID(errors_hostkey_absent));
+		assert(mbret==IDYES || mbret==IDNO || mbret==IDCANCEL);
+		sfree(text);
+		sfree(caption);
+		if (mbret == IDYES) {
+			store_host_key(host, port, keytype, keystr);
+			return 1;
+		} else if (mbret == IDNO)
+			return 1;
         return 0;
     }
+	return 0;
 }
 
 /*

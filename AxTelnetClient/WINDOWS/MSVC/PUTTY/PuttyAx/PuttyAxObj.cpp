@@ -37,7 +37,7 @@ static VOID* ReturnIfAllocated_NOLOCK( CHAR* name, INT size )
 
 	std::vector< SMemRegionInfo >*		pvec = & ( (CPuttyAxObj*) ::TlsGetValue( g_Tls.tls ) )->m_vsMemRegionInfo;
 
-	for( int i=0; i<pvec->size (); i ++ )
+	for( unsigned int i=0; i<pvec->size (); i ++ )
 	{
 		SMemRegionInfo*		p = & (*pvec)[ i ];
 		if ( ::strcmp( p->pszName, name ) == 0 )

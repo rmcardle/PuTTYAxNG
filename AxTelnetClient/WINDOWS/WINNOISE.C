@@ -5,9 +5,9 @@
 
 #include <stdio.h>
 
-#include "putty.h"
-#include "ssh.h"
-#include "storage.h"
+#include "..\putty.h"
+#include "..\ssh.h"
+#include "..\storage.h"
 
 /*
  * This function is called once, at PuTTY startup, and will do some

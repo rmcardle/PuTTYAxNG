@@ -11,7 +11,7 @@
 #include <windows.h>
 #include <stdio.h>		       /* for FILENAME_MAX */
 
-#include "tree234.h"
+#include "..\tree234.h"
 
 #include "winhelp.h"
 

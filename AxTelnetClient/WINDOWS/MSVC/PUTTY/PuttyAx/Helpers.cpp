@@ -45,7 +45,7 @@ widestring CharStringToWideString( charstring& csString )
 
 void TrimAtBothSides( charstring& csString )
 {
-	int		i, iStart = 0, iEnd = 0;
+	unsigned int		i, iStart = 0, iEnd = 0;
 
 	for ( i=0; i<csString.size(); i++ )
 		if ( csString[ i ] == ' ' || csString[ i ] == '\r' || csString[ i ] == '\n' || csString[ i ] == '\t' )

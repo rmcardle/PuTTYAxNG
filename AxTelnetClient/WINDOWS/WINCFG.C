@@ -6,9 +6,9 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "putty.h"
-#include "dialog.h"
-#include "storage.h"
+#include "..\putty.h"
+#include "..\dialog.h"
+#include "..\storage.h"
 
 static void about_handler(union control *ctrl, void *dlg,
 			  void *data, int event)

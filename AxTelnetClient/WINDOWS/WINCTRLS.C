@@ -16,9 +16,9 @@
 #include <assert.h>
 #include <ctype.h>
 
-#include "putty.h"
-#include "misc.h"
-#include "dialog.h"
+#include "..\putty.h"
+#include "..\misc.h"
+#include "..\dialog.h"
 
 #include <commctrl.h>
 

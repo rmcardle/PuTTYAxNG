@@ -1,19 +1,27 @@
+
+
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
-/* File created by MIDL compiler version 5.01.0164 */
-/* at Wed Jan 17 05:56:59 2007
+ /* File created by MIDL compiler version 7.00.0500 */
+/* at Fri Feb 05 00:17:46 2010
  */
-/* Compiler settings for C:\AxTelnetClient\WINDOWS\MSVC\PUTTY\PuttyAx\PuttyAx.idl:
-    Oicf (OptLev=i2), W1, Zp8, env=Win32, ms_ext, c_ext
+/* Compiler settings for .\PuttyAx.idl:
+    Oicf, W1, Zp8, env=Win32 (32b run)
+    protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
+    VC __declspec() decoration level: 
+         __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+         DECLSPEC_UUID(), MIDL_INTERFACE()
 */
 //@@MIDL_FILE_HEADING(  )
+
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
-#define __REQUIRED_RPCNDR_H_VERSION__ 440
+#define __REQUIRED_RPCNDR_H_VERSION__ 475
 #endif
 
 #include "rpc.h"
@@ -31,9 +39,9 @@
 #ifndef __PuttyAx_h__
 #define __PuttyAx_h__
 
-#ifdef __cplusplus
-extern "C"{
-#endif 
+#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+#pragma once
+#endif
 
 /* Forward Declarations */ 
 
@@ -65,8 +73,10 @@ typedef struct PuttyAxObj PuttyAxObj;
 #include "oaidl.h"
 #include "ocidl.h"
 
-void __RPC_FAR * __RPC_USER MIDL_user_allocate(size_t);
-void __RPC_USER MIDL_user_free( void __RPC_FAR * ); 
+#ifdef __cplusplus
+extern "C"{
+#endif 
+
 
 #ifndef __IPuttyAxObj_INTERFACE_DEFINED__
 #define __IPuttyAxObj_INTERFACE_DEFINED__
@@ -88,20 +98,20 @@ EXTERN_C const IID IID_IPuttyAxObj;
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Disconnect( void) = 0;
         
         virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_Connected( 
-            /* [retval][out] */ BOOL __RPC_FAR *pVal) = 0;
+            /* [retval][out] */ BOOL *pVal) = 0;
         
         virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_Server( 
-            /* [retval][out] */ BSTR __RPC_FAR *pVal) = 0;
+            /* [retval][out] */ BSTR *pVal) = 0;
         
         virtual /* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE put_Server( 
             /* [in] */ BSTR newVal) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ExecuteCommand( 
             /* [in] */ BSTR cmdText,
-            /* [retval][out] */ BSTR __RPC_FAR *pRetVal) = 0;
+            /* [retval][out] */ BSTR *pRetVal) = 0;
         
         virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_IsInitialized( 
-            /* [retval][out] */ BOOL __RPC_FAR *pVal) = 0;
+            /* [retval][out] */ BOOL *pVal) = 0;
         
     };
     
@@ -111,79 +121,80 @@ EXTERN_C const IID IID_IPuttyAxObj;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IPuttyAxObj __RPC_FAR * This,
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IPuttyAxObj * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IPuttyAxObj __RPC_FAR * This);
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IPuttyAxObj * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IPuttyAxObj __RPC_FAR * This);
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IPuttyAxObj * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IPuttyAxObj __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IPuttyAxObj * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IPuttyAxObj __RPC_FAR * This,
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IPuttyAxObj * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IPuttyAxObj __RPC_FAR * This,
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IPuttyAxObj * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IPuttyAxObj __RPC_FAR * This,
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IPuttyAxObj * This,
             /* [in] */ DISPID dispIdMember,
             /* [in] */ REFIID riid,
             /* [in] */ LCID lcid,
             /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
         
-        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Connect )( 
-            IPuttyAxObj __RPC_FAR * This);
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Connect )( 
+            IPuttyAxObj * This);
         
-        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Disconnect )( 
-            IPuttyAxObj __RPC_FAR * This);
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Disconnect )( 
+            IPuttyAxObj * This);
         
-        /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *get_Connected )( 
-            IPuttyAxObj __RPC_FAR * This,
-            /* [retval][out] */ BOOL __RPC_FAR *pVal);
+        /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Connected )( 
+            IPuttyAxObj * This,
+            /* [retval][out] */ BOOL *pVal);
         
-        /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *get_Server )( 
-            IPuttyAxObj __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pVal);
+        /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Server )( 
+            IPuttyAxObj * This,
+            /* [retval][out] */ BSTR *pVal);
         
-        /* [helpstring][id][propput] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *put_Server )( 
-            IPuttyAxObj __RPC_FAR * This,
+        /* [helpstring][id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_Server )( 
+            IPuttyAxObj * This,
             /* [in] */ BSTR newVal);
         
-        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *ExecuteCommand )( 
-            IPuttyAxObj __RPC_FAR * This,
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *ExecuteCommand )( 
+            IPuttyAxObj * This,
             /* [in] */ BSTR cmdText,
-            /* [retval][out] */ BSTR __RPC_FAR *pRetVal);
+            /* [retval][out] */ BSTR *pRetVal);
         
-        /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *get_IsInitialized )( 
-            IPuttyAxObj __RPC_FAR * This,
-            /* [retval][out] */ BOOL __RPC_FAR *pVal);
+        /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsInitialized )( 
+            IPuttyAxObj * This,
+            /* [retval][out] */ BOOL *pVal);
         
         END_INTERFACE
     } IPuttyAxObjVtbl;
 
     interface IPuttyAxObj
     {
-        CONST_VTBL struct IPuttyAxObjVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IPuttyAxObjVtbl *lpVtbl;
     };
 
     
@@ -192,137 +203,54 @@ EXTERN_C const IID IID_IPuttyAxObj;
 
 
 #define IPuttyAxObj_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IPuttyAxObj_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IPuttyAxObj_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IPuttyAxObj_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IPuttyAxObj_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IPuttyAxObj_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IPuttyAxObj_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IPuttyAxObj_Connect(This)	\
-    (This)->lpVtbl -> Connect(This)
+    ( (This)->lpVtbl -> Connect(This) ) 
 
 #define IPuttyAxObj_Disconnect(This)	\
-    (This)->lpVtbl -> Disconnect(This)
+    ( (This)->lpVtbl -> Disconnect(This) ) 
 
 #define IPuttyAxObj_get_Connected(This,pVal)	\
-    (This)->lpVtbl -> get_Connected(This,pVal)
+    ( (This)->lpVtbl -> get_Connected(This,pVal) ) 
 
 #define IPuttyAxObj_get_Server(This,pVal)	\
-    (This)->lpVtbl -> get_Server(This,pVal)
+    ( (This)->lpVtbl -> get_Server(This,pVal) ) 
 
 #define IPuttyAxObj_put_Server(This,newVal)	\
-    (This)->lpVtbl -> put_Server(This,newVal)
+    ( (This)->lpVtbl -> put_Server(This,newVal) ) 
 
 #define IPuttyAxObj_ExecuteCommand(This,cmdText,pRetVal)	\
-    (This)->lpVtbl -> ExecuteCommand(This,cmdText,pRetVal)
+    ( (This)->lpVtbl -> ExecuteCommand(This,cmdText,pRetVal) ) 
 
 #define IPuttyAxObj_get_IsInitialized(This,pVal)	\
-    (This)->lpVtbl -> get_IsInitialized(This,pVal)
+    ( (This)->lpVtbl -> get_IsInitialized(This,pVal) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IPuttyAxObj_Connect_Proxy( 
-    IPuttyAxObj __RPC_FAR * This);
-
-
-void __RPC_STUB IPuttyAxObj_Connect_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IPuttyAxObj_Disconnect_Proxy( 
-    IPuttyAxObj __RPC_FAR * This);
-
-
-void __RPC_STUB IPuttyAxObj_Disconnect_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IPuttyAxObj_get_Connected_Proxy( 
-    IPuttyAxObj __RPC_FAR * This,
-    /* [retval][out] */ BOOL __RPC_FAR *pVal);
-
-
-void __RPC_STUB IPuttyAxObj_get_Connected_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IPuttyAxObj_get_Server_Proxy( 
-    IPuttyAxObj __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pVal);
-
-
-void __RPC_STUB IPuttyAxObj_get_Server_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE IPuttyAxObj_put_Server_Proxy( 
-    IPuttyAxObj __RPC_FAR * This,
-    /* [in] */ BSTR newVal);
-
-
-void __RPC_STUB IPuttyAxObj_put_Server_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IPuttyAxObj_ExecuteCommand_Proxy( 
-    IPuttyAxObj __RPC_FAR * This,
-    /* [in] */ BSTR cmdText,
-    /* [retval][out] */ BSTR __RPC_FAR *pRetVal);
-
-
-void __RPC_STUB IPuttyAxObj_ExecuteCommand_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IPuttyAxObj_get_IsInitialized_Proxy( 
-    IPuttyAxObj __RPC_FAR * This,
-    /* [retval][out] */ BOOL __RPC_FAR *pVal);
-
-
-void __RPC_STUB IPuttyAxObj_get_IsInitialized_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -361,52 +289,53 @@ EXTERN_C const IID DIID__IPuttyAxObjEvents;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            _IPuttyAxObjEvents __RPC_FAR * This,
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            _IPuttyAxObjEvents * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [iid_is][out] */ 
+            __RPC__deref_out  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            _IPuttyAxObjEvents __RPC_FAR * This);
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            _IPuttyAxObjEvents * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            _IPuttyAxObjEvents __RPC_FAR * This);
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            _IPuttyAxObjEvents * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            _IPuttyAxObjEvents __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            _IPuttyAxObjEvents * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            _IPuttyAxObjEvents __RPC_FAR * This,
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            _IPuttyAxObjEvents * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            _IPuttyAxObjEvents __RPC_FAR * This,
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            _IPuttyAxObjEvents * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            _IPuttyAxObjEvents __RPC_FAR * This,
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            _IPuttyAxObjEvents * This,
             /* [in] */ DISPID dispIdMember,
             /* [in] */ REFIID riid,
             /* [in] */ LCID lcid,
             /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
         
         END_INTERFACE
     } _IPuttyAxObjEventsVtbl;
 
     interface _IPuttyAxObjEvents
     {
-        CONST_VTBL struct _IPuttyAxObjEventsVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct _IPuttyAxObjEventsVtbl *lpVtbl;
     };
 
     
@@ -415,26 +344,26 @@ EXTERN_C const IID DIID__IPuttyAxObjEvents;
 
 
 #define _IPuttyAxObjEvents_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define _IPuttyAxObjEvents_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define _IPuttyAxObjEvents_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define _IPuttyAxObjEvents_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define _IPuttyAxObjEvents_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define _IPuttyAxObjEvents_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define _IPuttyAxObjEvents_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 #endif /* COBJMACROS */
 
@@ -456,10 +385,10 @@ PuttyAxObj;
 
 /* Additional Prototypes for ALL interfaces */
 
-unsigned long             __RPC_USER  BSTR_UserSize(     unsigned long __RPC_FAR *, unsigned long            , BSTR __RPC_FAR * ); 
-unsigned char __RPC_FAR * __RPC_USER  BSTR_UserMarshal(  unsigned long __RPC_FAR *, unsigned char __RPC_FAR *, BSTR __RPC_FAR * ); 
-unsigned char __RPC_FAR * __RPC_USER  BSTR_UserUnmarshal(unsigned long __RPC_FAR *, unsigned char __RPC_FAR *, BSTR __RPC_FAR * ); 
-void                      __RPC_USER  BSTR_UserFree(     unsigned long __RPC_FAR *, BSTR __RPC_FAR * ); 
+unsigned long             __RPC_USER  BSTR_UserSize(     unsigned long *, unsigned long            , BSTR * ); 
+unsigned char * __RPC_USER  BSTR_UserMarshal(  unsigned long *, unsigned char *, BSTR * ); 
+unsigned char * __RPC_USER  BSTR_UserUnmarshal(unsigned long *, unsigned char *, BSTR * ); 
+void                      __RPC_USER  BSTR_UserFree(     unsigned long *, BSTR * ); 
 
 /* end of Additional Prototypes */
 
@@ -468,3 +397,5 @@ void                      __RPC_USER  BSTR_UserFree(     unsigned long __RPC_FAR
 #endif
 
 #endif
+
+

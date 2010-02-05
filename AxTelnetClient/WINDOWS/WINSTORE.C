@@ -6,10 +6,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "putty.h"
+#include "..\putty.h"
 
 #ifdef _PUTTYAX_
-#include "c:\AxTelnetClient\storage.h"
+#include "..\storage.h"
 #else
 #include "storage.h"
 #endif

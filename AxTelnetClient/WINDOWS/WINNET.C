@@ -15,9 +15,9 @@
 #include <assert.h>
 
 #define DEFINE_PLUG_METHOD_MACROS
-#include "putty.h"
-#include "network.h"
-#include "tree234.h"
+#include "..\putty.h"
+#include "..\network.h"
+#include "..\tree234.h"
 
 #include <ws2tcpip.h>
 

@@ -2,7 +2,7 @@
  * windefs.c: default settings that are specific to Windows.
  */
 
-#include "putty.h"
+#include "..\putty.h"
 
 #include <commctrl.h>
 

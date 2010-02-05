@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "putty.h"
+#include "..\putty.h"
 
 OSVERSIONINFO osVersion__FORSIZEOF;
 #define osVersion			DEFINE_AX_GET_POINTER( osVersion, OSVERSIONINFO )

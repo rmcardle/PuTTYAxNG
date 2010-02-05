@@ -5,9 +5,9 @@
 #include <assert.h>
 
 #define PUTTY_DO_GLOBALS	       /* actually _define_ globals */
-#include "putty.h"
-#include "terminal.h"
-#include "storage.h"
+#include "..\putty.h"
+#include "..\terminal.h"
+#include "..\storage.h"
 #include "win_res.h"
 
 #ifndef NO_MULTIMON
@@ -2114,7 +2114,7 @@ void timer_change_notify(long next)
 		} else if (wParam == IDM_SAVEDSESS) {
 		    unsigned int sessno = ((lParam - IDM_SAVED_MIN)
 					   / MENU_SAVED_STEP) + 1;
-		    if (sessno < sesslist_.nsessions) {
+		    if (sessno < (unsigned int)sesslist_.nsessions) {
 			char *session = sesslist_.sessions[sessno];
 			/* XXX spaces? quotes? "-load"? */
 			cl = dupprintf("putty @%s", session);

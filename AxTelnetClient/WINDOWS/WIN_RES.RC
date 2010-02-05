@@ -5,9 +5,9 @@
 #include "rcstuff.h"
 #include "win_res.h"
 
-IDI_MAINICON ICON "putty.ico"
+IDI_MAINICON ICON "..\..\..\putty.ico"
 
-IDI_CFGICON ICON "puttycfg.ico"
+IDI_CFGICON ICON "..\..\..\puttycfg.ico"
 
 /* Accelerators used: clw */
 IDD_ABOUTBOX DIALOG DISCARDABLE 140, 40, 214, 70
@@ -83,4 +83,4 @@ BEGIN
 
 END
 
-1 RT_MANIFEST "putty.mft"
+1 RT_MANIFEST "..\..\..\putty.mft"

@@ -2,7 +2,7 @@
  * Printing interface for PuTTY.
  */
 
-#include "putty.h"
+#include "..\putty.h"
 #include <winspool.h>
 
 struct printer_enum_tag {

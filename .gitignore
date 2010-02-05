@@ -1,0 +1,6 @@
+/AxTelnetClient/WINDOWS/MSVC/PUTTY/PuttyAx/Debug
+*.suo
+*.ncb
+*.user
+Thumbs.db
+_ReSharper.*

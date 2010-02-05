@@ -7,8 +7,8 @@
 #include <ctype.h>
 
 #include "winstuff.h"
-#include "putty.h"
-#include "misc.h"
+#include "..\putty.h"
+#include "..\misc.h"
 
 #ifdef TESTMODE
 /* Definitions to allow this module to be compiled standalone for testing
